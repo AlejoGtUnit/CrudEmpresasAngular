@@ -1,0 +1,61 @@
+<br />
+<div class="container">
+  <form #entradaForm="ngForm" (ngSubmit)="onSubmit()" class="formulario">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <h1>Crear nueva empresa</h1>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <a class="btn btn-primary" [routerLink]="['/fetch-data']">Cancelar</a>&nbsp;
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-md-6">
+        Nombre Comercial:
+        <br /><input id="nombreComercial" name="nombreComercial" type="text" class="w-100 mt-2" [(ngModel)]="modeloEntrada.nombreComercial" />
+      </div>
+      <div class="col-md-6">
+        Razón Social:
+        <br /><input id="razonSocial" name="razonSocial" type="text" class="w-100 mt-2" [(ngModel)]="modeloEntrada.razonSocial" />
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-md-6 col-sm-12">
+        Telefono:
+        <br /><input id="telefono" name="telefono" type="text" class="w-100 mt-2" [(ngModel)]="modeloEntrada.telefono" />
+      </div>
+      <div class="col-md-6 col-sm-12">
+        Correo Electronico:
+        <br /><input id="correoElectronico" name="correoElectronico" type="text" class="w-100 mt-2" [(ngModel)]="modeloEntrada.correoElectronico" readonly="readonly" disabled="disabled" />
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-md-6 col-sm-12">
+        Nit:
+        <br />
+        <input id="nit" name="nit" type="text" class="w-100 mt-2" [(ngModel)]="modeloEntrada.nit" />
+      </div>
+      <div class="col-md-6 col-sm-12">
+        Estado:
+        <br />
+        <input id="estado" name="estado" type="text" class="w-100 mt-2" [(ngModel)]="modeloEntrada.estado" />
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-md-12">
+        Direccion:
+        <br />
+        <input id="direccion" name="direccion" type="text" class="w-100 mt-2" [(ngModel)]="modeloEntrada.direccion" />
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div *ngIf="mensajeError" class="alert alert-danger" role="alert">
+        {{mensajeError}}
+      </div>
+      <div *ngIf="mensajeExito" class="alert alert-success" role="alert">
+        {{mensajeExito}}
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #e01a76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+.table {
+  --bs-table-bg: #198754;
+  --bs-table-striped-bg: #0d6efd;
+}
+
+.formulario {
+  border: 1px solid indigo;
+  padding: 25px;
+  border-radius: 9px;
+  color: #5f1cb1;
+}
+
+.container-fluid {
+    
+}
+
+.container {
+    background-color:white;
+}
+
+.fondo-indigo {
+  background: linear-gradient(to left, #7acfe3, indigo);
+}
+
+.btn-agregar {
+  border-radius: 11px;
+  background: linear-gradient(to left, #7acfe3, indigo);
+}

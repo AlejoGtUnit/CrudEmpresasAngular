@@ -1,0 +1,45 @@
+<div class="container">
+
+  <div class="row fondo-indigo text-white">
+    <div class="col-md-10 col-sm-12">
+      <h1 id="tableLabel">Gestión de empresas</h1>
+      <p>Agrega, edita o elimina empresas.</p>
+    </div>
+    <div class="col-md-2 col-sm-12">
+      <div class="d-flex">
+        <a [routerLink]="['/crear-empresa']" class="btn text-center btn-agregar d-flex mt-2">Agregar</a>
+      </div>
+    </div>
+  </div>
+  
+
+  
+
+  <p *ngIf="!empresas"><em>Cargando...</em></p>
+  <br />
+  <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="empresas">
+    <thead>
+      <tr>
+        <th class="bg-transparent">No.</th>
+        <th class="bg-transparent">Estado</th>
+        <th class="bg-transparent">Nombre</th>
+        <th class="bg-transparent">E-mail</th>
+        <th class="bg-transparent">Nit</th>
+        <th class="bg-transparent">Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let empresa of empresas">
+        <td>{{ empresa.numero }}</td>
+        <td>{{ empresa.estado }}</td>
+        <td>{{ empresa.nombre }}</td>
+        <td>{{ empresa.email }}</td>
+        <td>{{ empresa.nit }}</td>
+        <td>
+          <a [routerLink]="['/editar-empresa', empresa.numero]" class="bi bi-pencil-square text-black"></a>&nbsp;&nbsp;&nbsp;
+          <a class="bi bi-trash3-fill text-black" (click)="onClick(empresa.numero.toString())"></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
